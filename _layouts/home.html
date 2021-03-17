@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Blog</h1>
+  
+  {{ content }}
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%d/%m/%Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h2>
+          {{ post.excerpt }}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">Suscríbete <a href="{{ "/feed.xml" | relative_url }}">vía RSS</a></p>
+
+</div>
